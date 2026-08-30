@@ -3,8 +3,9 @@
  * Generated from site/static/icons/held_ether.png (alpha channel).
  * 140x68, LV_IMG_CF_INDEXED_1BIT, 8-byte palette + 18-byte rows.
  *
- * Both `balloon` and `mountain` are defined as the same image so the
- * random pick in peripheral_status.c always shows this art.
+ * Exposed as `held_ether_img`; the overridden peripheral_status.c binds
+ * it. Deliberately NOT named balloon/mountain - those are defined in
+ * upstream art.c and would be a duplicate symbol at link time.
  */
 
 #include <lvgl.h>
@@ -119,17 +120,7 @@ static const LV_ATTRIBUTE_MEM_ALIGN uint8_t held_ether_map[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t mountain = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
-    .header.w = 140,
-    .header.h = 68,
-    .data_size = sizeof(held_ether_map),
-    .data = held_ether_map,
-};
-
-const lv_img_dsc_t balloon = {
+const lv_img_dsc_t held_ether_img = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.always_zero = 0,
     .header.reserved = 0,
