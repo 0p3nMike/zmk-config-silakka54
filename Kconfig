@@ -1,0 +1,4 @@
+config SILAKKA54_CUSTOM_ART
+    bool "Replace nice!view peripheral art with held_ether"
+    default y
+    depends on ZMK_DISPLAY && NICE_VIEW_WIDGET_STATUS
