@@ -1,0 +1,9 @@
+name: Build ZMK firmware
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    # Pinned to the same release as config/west.yml — @main runs Zephyr 4.1
+    # era checks that reject a v0.3.0 tree. Bump both together.
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0

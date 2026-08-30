@@ -1,0 +1,12 @@
+file_format: "1"
+id: silakka54
+name: Silakka54
+type: shield
+url: https://github.com/AnshulJ98/zmk-config-silakka54
+requires: [pro_micro]
+features:
+  - keys
+  - studio
+siblings:
+  - silakka54_left
+  - silakka54_right
