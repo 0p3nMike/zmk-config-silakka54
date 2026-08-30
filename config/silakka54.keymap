@@ -24,20 +24,14 @@
 / {
     combos {
         compatible = "zmk,combos";
-        /* Esc + Backspace together = unlock ZMK Studio. Both are on the
-         * number row outer corners, so this needs both halves connected.
-         * The Adjust-layer &studio_unlock below is the one-half fallback. */
+        /* Kept only as a fallback: CONFIG_ZMK_STUDIO_LOCKING=n means
+         * Studio never asks to unlock. If locking is ever re-enabled,
+         * F+J unlocks it. 40ms window so it cannot fire during normal
+         * typing - an accidental unlock is harmless anyway, it only
+         * permits editing. */
         combo_studio_unlock {
-            timeout-ms = <50>;
-            key-positions = <0 11>;
-            bindings = <&studio_unlock>;
-        };
-        /* LEFT-HALF-ONLY unlock: Esc + Tab + Q (positions 0, 12, 13).
-         * All three are on the left half, so this works when the right
-         * half is absent or unpaired. */
-        combo_studio_unlock_left {
-            timeout-ms = <75>;
-            key-positions = <0 12 13>;
+            timeout-ms = <40>;
+            key-positions = <28 31>;
             bindings = <&studio_unlock>;
         };
     };
