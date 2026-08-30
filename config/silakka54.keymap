@@ -32,6 +32,14 @@
             key-positions = <0 11>;
             bindings = <&studio_unlock>;
         };
+        /* LEFT-HALF-ONLY unlock: Esc + Tab + Q (positions 0, 12, 13).
+         * All three are on the left half, so this works when the right
+         * half is absent or unpaired. */
+        combo_studio_unlock_left {
+            timeout-ms = <75>;
+            key-positions = <0 12 13>;
+            bindings = <&studio_unlock>;
+        };
     };
 };
 
